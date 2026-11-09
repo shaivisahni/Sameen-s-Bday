@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Turtle Birthday Bash</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bunting" id="bunting" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <p class="kicker">Est. about 220 million years ago</p>
+      <h1>Happy <span class="pop">Birthday</span>, <span class="pop2">Sameen!</span></h1>
+      <p class="lede">Turtles were around before dinosaurs had their first party. Come meet the guests, count the candles and find out why this crowd has the longest guest list in the animal kingdom.</p>
+      <div class="cta-row">
+        <button class="btn" id="popBtn" type="button">Pop the confetti</button>
+        <a class="btn alt" href="#guests" style="text-decoration:none">See the guest list</a>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="balloon b1"><i></i></div>
+      <div class="balloon b2"><i></i></div>
+      <div class="balloon b3"><i></i></div>
+      <svg class="turtle" viewBox="0 0 440 340" role="img" aria-label="A green turtle wearing a party hat, smiling">
+        <ellipse cx="220" cy="312" rx="170" ry="14" fill="var(--fg)" opacity=".12"/>
+        <!-- back legs and tail -->
+        <ellipse cx="108" cy="288" rx="34" ry="22" fill="var(--shell)" stroke="var(--fg)" stroke-width="5"/>
+        <ellipse cx="318" cy="288" rx="34" ry="22" fill="var(--shell)" stroke="var(--fg)" stroke-width="5"/>
+        <path d="M62 236 q-30 6 -34 26 q24 -2 40 -14z" fill="var(--shell)" stroke="var(--fg)" stroke-width="5" stroke-linejoin="round"/>
+        <!-- head -->
+        <circle cx="372" cy="196" r="46" fill="var(--shell)" stroke="var(--fg)" stroke-width="5"/>
+        <circle cx="384" cy="186" r="7" fill="var(--fg)"/>
+        <circle cx="387" cy="183" r="2.5" fill="#fff"/>
+        <path d="M368 212 q18 16 38 0" fill="none" stroke="var(--fg)" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="356" cy="208" r="8" fill="var(--pink)" opacity=".7"/>
+        <!-- shell -->
+        <path d="M60 262 C60 130 140 80 220 80 C300 80 380 130 380 262 Z" fill="var(--sun)" stroke="var(--fg)" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M60 262 C60 130 140 80 220 80 C300 80 380 130 380 262 Z" fill="none" stroke="var(--fg)" stroke-width="0"/>
+        <path d="M196 98 L244 98 L262 142 L220 168 L178 142 Z" fill="var(--pink)" stroke="var(--fg)" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M178 142 L124 150 L100 204 L146 232 L196 206 L220 168" fill="var(--sky)" stroke="var(--fg)" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M262 142 L316 150 L340 204 L294 232 L244 206 L220 168" fill="var(--sky)" stroke="var(--fg)" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M146 232 L196 206 L244 206 L294 232 L292 262 L148 262 Z" fill="var(--shell)" stroke="var(--fg)" stroke-width="5" stroke-linejoin="round"/>
+        <!-- rim -->
+        <rect x="52" y="256" width="336" height="18" rx="9" fill="var(--shell)" stroke="var(--fg)" stroke-width="5"/>
+        <!-- front legs -->
+        <ellipse cx="170" cy="292" rx="34" ry="22" fill="var(--shell)" stroke="var(--fg)" stroke-width="5"/>
+        <ellipse cx="270" cy="292" rx="34" ry="22" fill="var(--shell)" stroke="var(--fg)" stroke-width="5"/>
+        <!-- party hat -->
+        <g class="hat">
+          <path d="M346 156 L372 74 L400 150 Z" fill="var(--pink)" stroke="var(--fg)" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M356 128 L388 124" stroke="var(--sun)" stroke-width="7" stroke-linecap="round"/>
+          <path d="M352 146 L394 140" stroke="var(--sky)" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="372" cy="70" r="11" fill="var(--sun)" stroke="var(--fg)" stroke-width="5"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <section id="guests">
+    <div class="sec-head">
+      <h2>The guest list</h2>
+      <p>Six turtles and tortoises who RSVP'd yes. Each one brought a party trick.</p>
+    </div>
+    <div class="guests">
+      <article class="guest">
+        <span class="tag" style="background:var(--shell)">Ocean traveller</span>
+        <h3>Green sea turtle</h3>
+        <p class="latin">Chelonia mydas</p>
+        <p class="fact">Females often return to the very beach where they hatched to lay their own eggs, sometimes decades later.</p>
+      </article>
+      <article class="guest">
+        <span class="tag" style="background:var(--sky)">Deep diver</span>
+        <h3>Leatherback</h3>
+        <p class="latin">Dermochelys coriacea</p>
+        <p class="fact">No hard shell at all. Oily, leathery skin covers its back, and it can dive deeper than 1,000 metres.</p>
+      </article>
+      <article class="guest">
+        <span class="tag" style="background:var(--sun)">Island giant</span>
+        <h3>Galápagos tortoise</h3>
+        <p class="latin">Chelonoidis niger complex</p>
+        <p class="fact">Shell shape depends on the island. Tortoises from dry islands have saddle-shaped shells that let them reach higher plants.</p>
+      </article>
+      <article class="guest">
+        <span class="tag" style="background:var(--pink)">Shell hinge</span>
+        <h3>Eastern box turtle</h3>
+        <p class="latin">Terrapene carolina</p>
+        <p class="fact">The hinged underside closes up tight, so the whole turtle becomes a shut box when something scary walks by.</p>
+      </article>
+      <article class="guest">
+        <span class="tag" style="background:var(--shell)">Red cheeks</span>
+        <h3>Red-eared slider</h3>
+        <p class="latin">Trachemys scripta elegans</p>
+        <p class="fact">Named for the red stripe behind each eye. It is the most common pet turtle in the world, and a well-known invader far from home.</p>
+      </article>
+      <article class="guest">
+        <span class="tag" style="background:var(--sky)">Sneaky host</span>
+        <h3>Alligator snapping turtle</h3>
+        <p class="latin">Macrochelys temminckii</p>
+        <p class="fact">Waits with its mouth open and wiggles a pink, worm-shaped tongue to lure fish straight in.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>Candles on the cake</h2>
+      <p>One candle per year. Rough lifespans for the party guests, shown against the oldest turtle on record.</p>
+    </div>
+    <div class="cake">
+      <ul class="candles" id="candles"></ul>
+      <div class="axis" aria-hidden="true"><span>0</span><span>50</span><span>100</span><span>150</span><span>200 years</span></div>
+      <p class="note">Lifespans are typical ranges and vary a lot between wild and captive animals. Jonathan, a Seychelles giant tortoise living on the island of Saint Helena, hatched around 1832.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>Party facts</h2>
+      <p>Three things to tell the person next to you at the party.</p>
+    </div>
+    <div class="facts">
+      <div class="party-fact" style="background:var(--sun)">
+        <span class="big">~60</span>
+        <p>bones make up a turtle's shell. The ribs and spine are fused into it, so a turtle can never climb out.</p>
+      </div>
+      <div class="party-fact" style="background:var(--sky)">
+        <span class="big">220M</span>
+        <p>years since the first turtles showed up. They have outlasted most of the animals they once shared the planet with.</p>
+      </div>
+      <div class="party-fact" style="background:var(--pink)">
+        <span class="big">Warm = girls</span>
+        <p>In sea turtles, the temperature of the nest decides the sex of the hatchlings. Warmer sand produces more females.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wish">
+      <h2>Make a wish</h2>
+      <p class="sub">Blow out the candles for the turtles. Tap to get a wish.</p>
+      <button class="btn" id="wishBtn" type="button">Blow out the candles</button>
+      <p id="wishOut" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <footer>Turtle Birthday Bash. Slow and steady wins the cake.</footer>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
