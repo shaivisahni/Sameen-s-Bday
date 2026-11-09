@@ -21,7 +21,7 @@
       <p class="lede">Happy Birthday, Sameen! Ya know, turtles were around before dinosaurs. That’s a long time, but it's still not enough time for me to tell you all of the things I love about you!</p>
       <div class="cta-row">
         <button class="btn" id="popBtn" type="button">Pop the confetti</button>
-        <a class="btn alt" href="#guests" style="text-decoration:none">See the guest list</a>
+        <a class="btn alt" href="#guests" style="text-decoration:none">See some Cute Turtle</a>
       </div>
     </div>
     <div class="stage">
@@ -63,60 +63,373 @@
     </div>
   </header>
 
-  <section id="guests">
-    <div class="sec-head">
-      <h2>The guest list</h2>
-      <p>Six turtles and tortoises who RSVP'd yes. Each one brought a party trick.</p>
-    </div>
-    <div class="guests">
-      <article class="guest">
-        <span class="tag" style="background:var(--shell)">Ocean traveller</span>
-        <h3>Green sea turtle</h3>
-        <p class="latin">Chelonia mydas</p>
-        <p class="fact">Females often return to the very beach where they hatched to lay their own eggs, sometimes decades later.</p>
-      </article>
-      <article class="guest">
-        <span class="tag" style="background:var(--sky)">Deep diver</span>
-        <h3>Leatherback</h3>
-        <p class="latin">Dermochelys coriacea</p>
-        <p class="fact">No hard shell at all. Oily, leathery skin covers its back, and it can dive deeper than 1,000 metres.</p>
-      </article>
-      <article class="guest">
-        <span class="tag" style="background:var(--sun)">Island giant</span>
-        <h3>Galápagos tortoise</h3>
-        <p class="latin">Chelonoidis niger complex</p>
-        <p class="fact">Shell shape depends on the island. Tortoises from dry islands have saddle-shaped shells that let them reach higher plants.</p>
-      </article>
-      <article class="guest">
-        <span class="tag" style="background:var(--pink)">Shell hinge</span>
-        <h3>Eastern box turtle</h3>
-        <p class="latin">Terrapene carolina</p>
-        <p class="fact">The hinged underside closes up tight, so the whole turtle becomes a shut box when something scary walks by.</p>
-      </article>
-      <article class="guest">
-        <span class="tag" style="background:var(--shell)">Red cheeks</span>
-        <h3>Red-eared slider</h3>
-        <p class="latin">Trachemys scripta elegans</p>
-        <p class="fact">Named for the red stripe behind each eye. It is the most common pet turtle in the world, and a well-known invader far from home.</p>
-      </article>
-      <article class="guest">
-        <span class="tag" style="background:var(--sky)">Sneaky host</span>
-        <h3>Alligator snapping turtle</h3>
-        <p class="latin">Macrochelys temminckii</p>
-        <p class="fact">Waits with its mouth open and wiggles a pink, worm-shaped tongue to lure fish straight in.</p>
-      </article>
-    </div>
-  </section>
+
+
+<section id="guests">
+<style>
+  #guests .collage-heading {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  #guests .collage-heading h2 {
+    font-family: "Bagel Fat One", cursive;
+    font-size: clamp(32px, 5vw, 52px);
+    margin-bottom: 8px;
+  }
+
+  #guests .collage-heading p {
+    font-size: 16px;
+  }
+
+  #guests .collage-wrap {
+    position: relative;
+    width: 100%;
+    height: 660px;
+    min-height: 0;
+    margin: 0 auto;
+    border: 4px solid var(--fg);
+    border-radius: 24px;
+    background: #dff8f5;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 var(--fg);
+    isolation: isolate;
+  }
+
+  #guests .photo-card {
+    position: absolute;
+    width: 18%;
+    padding: 7px 7px 31px;
+    box-sizing: border-box;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 7px 17px rgba(0,0,0,.23);
+    transform: rotate(var(--rot));
+    transition: transform .25s, box-shadow .25s;
+    z-index: var(--layer);
+    cursor: zoom-in;
+    text-decoration: none;
+    color: #333;
+  }
+
+  #guests .photo-card:hover {
+    transform: rotate(var(--rot)) scale(1.45);
+    box-shadow: 0 17px 32px rgba(0,0,0,.35);
+    z-index: 100;
+  }
+
+  #guests .photo-frame {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #d4eee8;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #guests .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform .2s ease;
+    pointer-events: none;
+  }
+
+  #guests .photo-card:hover img {
+    transform: scale(1.85);
+  }
+
+  #guests .photo-label {
+    position: absolute;
+    bottom: 4px;
+    left: 3px;
+    right: 3px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: center;
+    color: #333;
+    overflow: hidden;
+  }
+
+  #guests .collage-note {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+  }
+
+  #guests .collage-note small {
+    font-size: 11px;
+    font-weight: 400;
+    display: block;
+    margin-top: 6px;
+  }
+
+  @media (max-width: 650px) {
+    #guests .collage-wrap {
+      height: 530px;
+    }
+
+    #guests .photo-card {
+      width: 24%;
+      padding: 4px 4px 24px;
+    }
+
+    #guests .photo-label {
+      height: 20px;
+      font-size: 8px;
+      bottom: 2px;
+    }
+
+    #guests .photo-card:hover {
+      transform: rotate(var(--rot)) scale(1.25);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #guests .photo-card,
+    #guests .photo-frame img {
+      transition: none;
+    }
+  }
+</style>
+
+<div class="collage-heading">
+  <h2>🐢 Sameen's Turtle Gallery</h2>
+  <p>
+    24 turtle photos, from tiny swimmers to giant tortoises!
+    Hover to zoom in with your magnifying glass 🔍
+  </p>
+</div>
+
+<div class="collage-wrap" id="turtleCollage"></div>
+
+<p class="collage-note">
+  🐢 Too many turtles? Never.
+  <small>Click a photo to view its original image and credits.</small>
+</p>
+
+<script>
+(function () {
+
+  // Real species photographs from Wikimedia Commons.
+  // Every filename corresponds to a specific documented photo.
+  const turtles = [
+    {
+      name: "Hawksbill Sea Turtle",
+      file: "Hawksbill turtle......jpg"
+    },
+    {
+      name: "Indian Star Tortoise",
+      file: "Indian Star Tortoise 2024.jpg"
+    },
+    {
+      name: "Mata Mata Turtle",
+      file: "Mata mata turtle.jpg"
+    },
+    {
+      name: "Red-Eared Slider",
+      file: "Red-eared slider.jpg"
+    },
+    {
+      name: "Galápagos Tortoise",
+      file: "Galapagos Tortoise.jpg"
+    },
+    {
+      name: "Painted Turtle",
+      file: "Painted turtle.jpg"
+    },
+
+    {
+      name: "Alligator Snapping Turtle",
+      file: "Alligator Snapping Turtle.jpg"
+    },
+    {
+      name: "Radiated Tortoise",
+      file: "Radiated tortoise.jpg"
+    },
+    {
+      name: "Pig-Nosed Turtle",
+      file: "Pig-nosed turtle.jpg"
+    },
+    {
+      name: "Leatherback Sea Turtle",
+      file: "Leatherback sea turtle (30059232178).jpg"
+    },
+    {
+      name: "Eastern Box Turtle",
+      file: "Eastern-Box-Turtle.jpg"
+    },
+    {
+      name: "Loggerhead Sea Turtle",
+      file: "Loggerhead sea turtle.jpg"
+    },
+
+    {
+      name: "Aldabra Giant Tortoise",
+      file: "Aldabra Giant Tortoise.jpg"
+    },
+    {
+      name: "Diamondback Terrapin",
+      file: "Diamondback Terrapin.jpg"
+    },
+    {
+      name: "Sulcata Tortoise",
+      file: "Sulcata Tortoise.jpg"
+    },
+    {
+      name: "Common Snapping Turtle",
+      file: "Common snapping turtle 1.jpg"
+    },
+    {
+      name: "Hawksbill Sea Turtle",
+      file: "Hawksbill-sea-turtle1(js).jpg"
+    },
+    {
+      name: "Indian Star Tortoise",
+      file: "Indian Star Tortoise (16269232708).jpg"
+    },
+
+    {
+      name: "Galápagos Tortoise",
+      file: "Galápagos tortoise (4228261221).jpg"
+    },
+    {
+      name: "Red-Eared Slider",
+      file: "Red Eared Slider.jpg"
+    },
+    {
+      name: "Alligator Snapping Turtle",
+      file: "Alligator snapping turtle (2).jpg"
+    },
+    {
+      name: "Loggerhead Sea Turtle",
+      file: "Loggerhead Sea turtle.jpg"
+    },
+    {
+      name: "Aldabra Giant Tortoise",
+      file: "Aldabra giant tortoise.JPG"
+    },
+    {
+      name: "Eastern Box Turtle",
+      file: "Eastern box turtle.JPG"
+    }
+  ];
+
+  // Four rows of overlapping Polaroids.
+  const positions = [
+    {x:-2,y:-3,r:-9}, {x:14,y:1,r:7},
+    {x:31,y:-2,r:-8}, {x:48,y:1,r:9},
+    {x:65,y:-3,r:-7}, {x:82,y:0,r:7},
+
+    {x:2,y:23,r:8}, {x:18,y:25,r:-10},
+    {x:35,y:22,r:7}, {x:52,y:25,r:-8},
+    {x:68,y:22,r:9}, {x:84,y:24,r:-7},
+
+    {x:-2,y:47,r:-7}, {x:14,y:50,r:9},
+    {x:31,y:47,r:-9}, {x:48,y:51,r:7},
+    {x:65,y:48,r:-8}, {x:82,y:50,r:8},
+
+    {x:2,y:73,r:9}, {x:19,y:71,r:-7},
+    {x:35,y:74,r:8}, {x:52,y:72,r:-9},
+    {x:68,y:74,r:6}, {x:84,y:72,r:-8}
+  ];
+
+  const collage = document.getElementById("turtleCollage");
+
+  turtles.forEach(function (turtle, index) {
+    const pos = positions[index];
+
+    const card = document.createElement("a");
+    card.className = "photo-card";
+
+    // Original photo page, including attribution/license details.
+    card.href = "https://commons.wikimedia.org/wiki/File:" +
+      encodeURIComponent(turtle.file);
+
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+    card.setAttribute("aria-label",
+      "View " + turtle.name + " photo and credits");
+
+    card.style.left = pos.x + "%";
+    card.style.top = pos.y + "%";
+    card.style.setProperty("--rot", pos.r + "deg");
+    card.style.setProperty("--layer", index + 1);
+
+    const frame = document.createElement("div");
+    frame.className = "photo-frame";
+
+    const img = document.createElement("img");
+    img.alt = turtle.name;
+    img.loading = index < 6 ? "eager" : "lazy";
+
+    // Direct Commons image links, no API request.
+    img.src =
+      "https://commons.wikimedia.org/wiki/Special:FilePath/" +
+      encodeURIComponent(turtle.file) +
+      "?width=500";
+
+    img.onerror = function () {
+      img.style.display = "none";
+      frame.textContent = "🐢";
+      frame.style.display = "flex";
+      frame.style.alignItems = "center";
+      frame.style.justifyContent = "center";
+      frame.style.fontSize = "45px";
+    };
+
+    const label = document.createElement("div");
+    label.className = "photo-label";
+    label.textContent = turtle.name;
+
+    frame.appendChild(img);
+    card.appendChild(frame);
+    card.appendChild(label);
+    collage.appendChild(card);
+
+    // Mouse-following magnification.
+    card.addEventListener("mousemove", function (e) {
+      const rect = frame.getBoundingClientRect();
+
+      const x = Math.max(0, Math.min(100,
+        ((e.clientX - rect.left) / rect.width) * 100
+      ));
+
+      const y = Math.max(0, Math.min(100,
+        ((e.clientY - rect.top) / rect.height) * 100
+      ));
+
+      img.style.transformOrigin = x + "% " + y + "%";
+    });
+
+    card.addEventListener("mouseleave", function () {
+      img.style.transformOrigin = "50% 50%";
+    });
+  });
+
+})();
+</script>
+</section>
+
 
   <section>
     <div class="sec-head">
-      <h2>Candles on the cake</h2>
-      <p>One candle per year. Rough lifespans for the party guests, shown against the oldest turtle on record.</p>
+      <h2>Whose Candles is the Longest in your Cake?</h2>
+      <p>Six candles, only one can Win, Whoever is the Longest, can Stick it in Sameen! </p>
     </div>
     <div class="cake">
       <ul class="candles" id="candles"></ul>
-      <div class="axis" aria-hidden="true"><span>0</span><span>50</span><span>100</span><span>150</span><span>200 years</span></div>
-      <p class="note">Lifespans are typical ranges and vary a lot between wild and captive animals. Jonathan, a Seychelles giant tortoise living on the island of Saint Helena, hatched around 1832.</p>
+      <div class="axis" aria-hidden="true"><span>0</span><span>50</span><span>100</span><span>150</span><span>200 feet</span></div>
+      <p class="note">Master Oogway once said that size doesn't matter... Master Oogway has not met Sameen </p>
     </div>
   </section>
 
@@ -127,16 +440,16 @@
     </div>
     <div class="facts">
       <div class="party-fact" style="background:var(--sun)">
-        <span class="big">~60</span>
-        <p>bones make up a turtle's shell. The ribs and spine are fused into it, so a turtle can never climb out.</p>
+        <span class="big">They can Last a While?</span>
+        <p>Sea turtle copulation can last for hours, sometimes exceeding a full day.</p>
       </div>
       <div class="party-fact" style="background:var(--sky)">
-        <span class="big">220M</span>
-        <p>years since the first turtles showed up. They have outlasted most of the animals they once shared the planet with.</p>
+        <span class="big">Endurance Test</span>
+        <p>During underwater mating, the female has to surface periodically to breathe while carrying the male on her back.</p>
       </div>
       <div class="party-fact" style="background:var(--pink)">
-        <span class="big">Warm = girls</span>
-        <p>In sea turtles, the temperature of the nest decides the sex of the hatchlings. Warmer sand produces more females.</p>
+        <span class="big">They get Loud?</span>
+        <p>Many turtles make distinct vocalizations—including groans or grunts—during the process.</p>
       </div>
     </div>
   </section>
@@ -150,10 +463,12 @@
     </div>
   </section>
 
-  <footer>Turtle Birthday Bash. Slow and steady wins the cake.</footer>
+  <footer>Turtle Birthday Bash. Slow and steady wins your cake.</footer>
 </div>
 
 <canvas id="confetti" aria-hidden="true"></canvas>
+
+<audio id="rickroll" src="rickroll.mp3" preload="auto"></audio>
 
 <script src="script.js"></script>
 </body>

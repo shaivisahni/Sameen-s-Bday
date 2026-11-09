@@ -12,12 +12,12 @@
 
   // lifespan candles
   var data = [
-    { n: 'Red-eared slider', s: 'typical', y: 30, c: 0 },
-    { n: 'Eastern box turtle', s: 'typical', y: 50, c: 1 },
-    { n: 'Green sea turtle', s: 'typical', y: 70, c: 2 },
-    { n: 'Galápagos tortoise', s: 'typical', y: 100, c: 3 },
-    { n: 'Aldabra giant tortoise', s: 'typical', y: 150, c: 0 },
-    { n: 'Jonathan', s: 'oldest living, about', y: 194, c: 1 }
+    { n: 'Hannah Nguyen', s: 'She wants you too', y: 30, c: 0 },
+    { n: 'Michelle Dominic', s: 'She would let you sit on her', y: 50, c: 1 },
+    { n: 'Anamika Prince', s: 'Potentially Gay', y: 70, c: 2 },
+    { n: 'Shaivi Sahni', s: 'Hot', y: 100, c: 3 },
+    { n: 'Eshaal Iqbal', s: 'Founded Iqbal Foods', y: 150, c: 0 },
+    { n: 'Sameen Ahmed', s: 'Is Gay', y: 194, c: 1 }
   ];
   var ul = document.getElementById('candles');
   data.forEach(function (d) {
@@ -66,10 +66,17 @@
     });
     if (parts.length) requestAnimationFrame(tick); else { running = false; ctx.clearRect(0, 0, innerWidth, innerHeight); }
   }
-  document.getElementById('popBtn').addEventListener('click', function (e) {
-    var r = e.currentTarget.getBoundingClientRect();
-    burst(r.left + r.width / 2, r.top + r.height / 2);
-  });
+document.getElementById('popBtn').addEventListener('click', function (e) {
+  var r = e.currentTarget.getBoundingClientRect();
+
+  // Pop confetti
+  burst(r.left + r.width / 2, r.top + r.height / 2);
+
+  // Play Rickroll audio
+  var audio = document.getElementById('rickroll');
+  audio.currentTime = 0;
+  audio.play();
+});
 
   // wishes
   var wishes = [
