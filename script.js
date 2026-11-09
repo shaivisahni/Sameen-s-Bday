@@ -73,12 +73,12 @@
 
   // wishes
   var wishes = [
-    'May your week move at turtle speed.',
-    'May every pond have a sunny log.',
-    'May the lettuce be crisp and the shell be strong.',
-    'May all hatchlings find the sea.',
-    'May you carry home wherever you go.',
-    'May the next hundred years be slow and good.'
+    'It’s like touching a baby',
+    'somethings tingling and it’s not the gaydar',
+    'It’s loong',
+    'Imma scrub yo daddy',
+    'Never enter Santa’s washroom',
+    'Never eat Santa’s washroom'
   ];
   var k = -1;
   document.getElementById('wishBtn').addEventListener('click', function (e) {
